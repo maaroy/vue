@@ -27,11 +27,11 @@ const Counter = {
       todos: [
         {
           id: 1,
-          text: "test 1",
+          text: "Merete needs to add more todos",
         },
         {
-          id: 123,
-          text: "test 2",
+          id: 2,
+          text: "Merete needs to find WHERE to add more todos",
         },
       ]
     }
