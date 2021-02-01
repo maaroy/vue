@@ -19,7 +19,7 @@ const Root = {
 const Counter = {
   data() {
     return {
-Te      eventname: "click",
+      eventname: "click",
       blah: 12,
       counter: 0,
       message: 'You loaded this page on ' + new Date().toLocaleString(),
