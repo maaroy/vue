@@ -24,6 +24,7 @@ const Counter = {
       counter: 0,
       message: 'You loaded this page on ' + new Date().toLocaleString(),
       seen: false,
+      todo: null,
       todos: [
         {
           id: 1,
@@ -37,6 +38,11 @@ const Counter = {
     }
   },
   methods: {
+    addTodo() {
+      this.todos.push({text: this.todo});
+      this.todo = "";
+      return false;
+    },
     reverse() {
       this.message = this.message.split('').reverse().join('');
     },

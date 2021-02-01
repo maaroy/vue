@@ -2,6 +2,21 @@
 <head>
 <!-- <script src="https://unpkg.com/vue@next"></script> -->
 <script src="vue.global.js"></script>
+<style>
+input[type=text] {
+  padding: 2px 5px;
+  width: 300px;
+}
+input[type=submit],
+button {
+  padding: 2px 5px;
+  width: 120px;
+}
+form {
+  margin: 0;
+  padding: 0;
+}
+</style>
 </head>
 <body>
 <div id="app">
@@ -12,10 +27,16 @@ Counter: <strong>{{ counter }}</strong><br />
   <p :title="message">
     {{ message }}
   </p>
-  <input v-model="message" /><br />
+  <input v-model="message" type="text" /><br />
   <button @[eventName]="reverse">Reverse</button>
 </div>
 <h2>Todos</h2>
+<p>Add a new todo:
+  <form>
+    <input v-model="todo" type="text" placeholder="Write something smart here" autofocus />
+    <input type="submit" @click.prevent="addTodo" value="Add" />
+  </form>
+</p>
 <ol>
   <!-- <li v-for="todo in todos">{{ todo.text }}</li> -->
   <todo-item
@@ -25,6 +46,6 @@ Counter: <strong>{{ counter }}</strong><br />
   ></todo-item>
 </ol>
 </div>
-<script src="index.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
