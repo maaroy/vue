@@ -64,7 +64,7 @@ app = Vue.createApp(Counter);
 
 app.component('todo-item', {
   props: ['todo'],
-  template: `<li>{{ todo.text + ': (' + todo.id + ')'}}</li>`
+  template: `<li>{{ todo.text }}</li>`
 })
 
 const instance = app.mount('#app');
