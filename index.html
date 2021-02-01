@@ -5,24 +5,25 @@
 </head>
 <body>
 <div id="app">
-  Counter: <strong>{{ counter }}</strong><br />
-  <button :id="blah" @click="show">Show</button><br />
-  <div v-if="seen" id="message">
-    <p :title="message">
-      {{ message }}
-    </p>
-    <input v-model="message" /><br />
-    <button @[eventName]="reverse">Reverse</button>
-  </div>
-  <h2>Todos</h2>
-  <ol>
-    <!-- <li v-for="todo in todos">{{ todo.text }}</li> -->
-    <todo-item
-      v-for="item in todos"
-      :todo="item"
-      :key="item.id"
-    ></todo-item>
-  </ol>
+<h1>Vue.js test app</h1>
+Counter: <strong>{{ counter }}</strong><br />
+<button :id="blah" @click="show">Show</button><br />
+<div v-if="seen" id="message">
+  <p :title="message">
+    {{ message }}
+  </p>
+  <input v-model="message" /><br />
+  <button @[eventName]="reverse">Reverse</button>
+</div>
+<h2>Todos</h2>
+<ol>
+  <!-- <li v-for="todo in todos">{{ todo.text }}</li> -->
+  <todo-item
+    v-for="item in todos"
+    :todo="item"
+    :key="item.id"
+  ></todo-item>
+</ol>
 </div>
 <script src="index.js"></script>
 </body>
