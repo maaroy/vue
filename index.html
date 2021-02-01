@@ -1,0 +1,22 @@
+<html>
+<head>
+<script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+<div id="counter">
+  Counter: <strong>{{ counter }}</strong><br />
+  <button v-on:click="show">Show</button><br />
+  <div v-if="seen" id="message">
+    <p v-bind:title="message">
+      {{ message }}
+    </p>
+    <input v-model="message" /><br />
+    <button v-on:click="reverse">Reverse</button>
+  </div>
+  <ol>
+    <li v-for="todo in todos">{{ todo.text }}</li>
+  </ol>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
