@@ -1,20 +1,26 @@
 <html>
 <head>
-<script src="https://unpkg.com/vue@next"></script>
+<!-- <script src="https://unpkg.com/vue@next"></script> -->
+<script src="vue.global.js"></script>
 </head>
 <body>
-<div id="counter">
+<div id="app">
   Counter: <strong>{{ counter }}</strong><br />
-  <button v-on:click="show">Show</button><br />
+  <button :id="blah" @click="show">Show</button><br />
   <div v-if="seen" id="message">
-    <p v-bind:title="message">
+    <p :title="message">
       {{ message }}
     </p>
     <input v-model="message" /><br />
-    <button v-on:click="reverse">Reverse</button>
+    <button @[eventName]="reverse">Reverse</button>
   </div>
   <ol>
-    <li v-for="todo in todos">{{ todo.text }}</li>
+    <!-- <li v-for="todo in todos">{{ todo.text }}</li> -->
+    <todo-item
+      v-for="item in todos"
+      :todo="item"
+      :key="item.id"
+    ></todo-item>
   </ol>
 </div>
 <script src="index.js"></script>

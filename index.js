@@ -1,16 +1,36 @@
-app = Vue.createApp(Counter);
+class Bag {
+  constructor(...values) {
+    this.values = values;
+  }
+  get count() {
+    return this.values.length;
+  }
+}
+const Root = {
+  helo() {
+    console.log(this.values);
+    return "HELLO";
+  },
+  get random() {
+    return 4;
+  },
+}
 
 const Counter = {
   data() {
     return {
+Te      eventname: "click",
+      blah: 12,
       counter: 0,
       message: 'You loaded this page on ' + new Date().toLocaleString(),
       seen: false,
       todos: [
         {
+          id: 1,
           text: "test 1",
         },
         {
+          id: 123,
           text: "test 2",
         },
       ]
@@ -28,11 +48,24 @@ const Counter = {
     setInterval(() => {
       this.counter++
     }, 1000)
-  }
+  },
+  created() {
+    console.log('Created count is: ' + this.count);
+  },
+  beforeMount() {
+    console.log('Before mount count is: ' + this.count);
+  },
+  unmounted() {
+    console.log('Unmounted count is: ' + this.count);
+  },
 }
 
+app = Vue.createApp(Counter);
+
 app.component('todo-item', {
-  template: `<li>This is a todo</li>`
+  props: ['todo'],
+  template: `<li>{{ todo.text + ': (' + todo.id + ')'}}</li>`
 })
 
-app.mount('#counter')
+const instance = app.mount('#app');
+console.log(instance.counter);
